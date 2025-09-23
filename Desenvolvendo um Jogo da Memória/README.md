@@ -1,8 +1,3 @@
-Boa! 🚀 Um projeto de **Jogo da Memória** fica mais completo com um README bem explicado.
-Aqui está um modelo pronto em **Markdown** que você pode usar no seu repositório:
-
----
-
 # 🃏 Jogo da Memória – Yu-Gi-Oh Edition
 
 Um jogo da memória simples feito com **HTML, CSS e JavaScript**.
