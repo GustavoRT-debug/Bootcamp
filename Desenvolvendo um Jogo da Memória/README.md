@@ -79,6 +79,6 @@ As cartas são inspiradas em personagens icônicos do universo **Yu-Gi-Oh** 🐉
 
 ---
 
-![Screenshot do jogo](Captura de tela 2025-09-23 150411.png)
+![Screenshot do jogo](https://github.com/GustavoRT-debug/Bootcamp/blob/6690e03820f1174fde91f164199d3993529fff2a/Desenvolvendo%20um%20Jogo%20da%20Mem%C3%B3ria/Captura%20de%20tela%202025-09-23%20150411.png)
 
 
