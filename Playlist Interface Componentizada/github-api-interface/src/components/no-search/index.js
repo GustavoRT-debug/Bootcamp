@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import useGithub from "../../hooks/github-hooks";
 import * as S from "./styled";
 
-const NoSearch = () => {
+const Search = () => {
+  const { getUser } = useGithub();
+  const [username, setUsername] = useState("");
+
+  const handleSearch = () => {
+    if (!username) return;
+    getUser(username);
+  };
+
   return (
     <S.Wrapper>
-      <h1>Nenhum usuario pesquisado</h1>
+      <input
+        type="text"
+        placeholder="Digite um usuário do GitHub"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <button onClick={handleSearch}>Pesquisar</button>
     </S.Wrapper>
   );
 };
 
-export default NoSearch;
+export default Search;
