@@ -1,15 +1,15 @@
-package org.example.trasportadoras;
-package br.com.pedidos.model.transportadoras;
+package org.example.transportadoras.transportadoraFactory;
 
-public class trasportadoraFactory {
+import org.example.trans.Transportadora;
+import org.example.transportadoras.correios.Correios;
+import org.example.transportadoras.jadLog.JadLog;
 
-        public static Transportadora criarTransportadora(String tipo) {
-            switch (tipo.toLowerCase()) {
-                case "correios": return new Correios();
-                case "jadlog": return new JadLog();
-                default: throw new IllegalArgumentException("Transportadora desconhecida: " + tipo);
-            }
-        }
+public class TransportadoraFactory {
+    public static Transportadora criarTransportadora(String tipo) {
+        return switch (tipo.toLowerCase()) {
+            case "correios" -> new Correios();
+            case "jadlog" -> new JadLog();
+            default -> throw new IllegalArgumentException("Transportadora desconhecida: " + tipo);
+        };
     }
-
 }

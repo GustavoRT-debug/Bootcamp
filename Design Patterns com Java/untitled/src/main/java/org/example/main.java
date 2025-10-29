@@ -1,18 +1,17 @@
 package org.example;
 
-import br.com.pedidos.model.*;
-import br.com.pedidos.model.transportadoras.TransportadoraFactory;
-import br.com.pedidos.service.LojaService;
+import org.example.cliente.Cliente;
+import org.example.pedido.Pedido;
+import org.example.facade.LojaFacade;
 
 public class Main {
     public static void main(String[] args) {
-        LojaService loja = LojaService.getInstance(); // Singleton
+        LojaFacade loja = new LojaFacade();
 
-        cliente cliente = new Cliente("Gustavo Torres", "gustavo@email.com");
+        Cliente cliente = new Cliente("Gustavo Torres", "gustavo@email.com");
         Pedido pedido = new Pedido(cliente, 250.0);
 
         loja.registrarObservadores();
-        loja.processarPedido(pedido, "correios", "expresso");
+        loja.realizarPedido(pedido, "correios", "expresso");
     }
 }
-

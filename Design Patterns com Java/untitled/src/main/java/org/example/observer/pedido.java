@@ -1,8 +1,7 @@
-package org.example.observer;
-public class pedido {
+package org.example.observer.pedido;
 
-    public interface PedidoObserver {
-        void atualizar(Pedido pedido);
-    }
+import org.example.pedido.Pedido;
 
+public interface PedidoObserver {
+    void atualizar(Pedido pedido);
 }

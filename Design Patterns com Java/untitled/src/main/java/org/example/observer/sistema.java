@@ -1,12 +1,11 @@
-package org.example.observer;
-package br.com.pedidos.observer;
-import br.com.pedidos.model.Pedido;
+package org.example.observer.sistema;
 
-    public class sistema implements PedidoObserver {
-        @Override
-        public void atualizar(Pedido pedido) {
-            System.out.println("[API Parceira] Pedido " + pedido.getId() + " integrado com sucesso!");
-        }
+import org.example.observer.pedido.PedidoObserver;
+import org.example.pedido.Pedido;
+
+public class SistemaParceiro implements PedidoObserver {
+    @Override
+    public void atualizar(Pedido pedido) {
+        System.out.println("[Sistema Parceiro] Pedido " + pedido.getId() + " sincronizado!");
     }
-
-
+}

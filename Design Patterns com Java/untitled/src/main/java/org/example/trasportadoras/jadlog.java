@@ -1,9 +1,10 @@
-package org.example.trasportadoras;
+package org.example.transportadoras.jadLog;
 
-    public class jadLog implements Transportadora {
-        @Override
-        public String getNome() {
-            return "JadLog";
-        }
+import org.example.trans.Transportadora;
+
+public class JadLog implements Transportadora {
+    @Override
+    public String getNome() {
+        return "JadLog";
     }
-
+}

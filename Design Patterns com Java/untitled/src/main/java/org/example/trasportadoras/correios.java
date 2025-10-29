@@ -1,8 +1,10 @@
-package org.example.trasportadoras;
+package org.example.transportadoras.correios;
 
-    public class correios implements Transportadora {
-        @Override
-        public String getNome() {
-            return "Correios";
-        }
+import org.example.trans.Transportadora;
+
+public class Correios implements Transportadora {
+    @Override
+    public String getNome() {
+        return "Correios";
     }
+}

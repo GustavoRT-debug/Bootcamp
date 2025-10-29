@@ -1,14 +1,16 @@
-package org.example.service;
-package pedidos.service;
-import pedido;
-import transportadoras.transportadora;
-import transportadoras.TransportadoraFactory;
-import observer.*;
-import pedidos.strategy.*;
+package org.example.one.service;
+
+import org.example.observer.email.EmailNotificacao;
+import org.example.observer.notificador.Notificador;
+import org.example.observer.sistema.SistemaParceiro;
+import org.example.pedido.Pedido;
+import org.example.strategy.comportamento.*;
+import org.example.trans.Transportadora;
+import org.example.transportadoras.transportadoraFactory.TransportadoraFactory;
 
 public class LojaService {
 
-    private static LojaService instancia; // Singleton
+    private static LojaService instancia;
     private final Notificador notificador = new Notificador();
 
     private LojaService() {}
@@ -27,15 +29,14 @@ public class LojaService {
 
     public void processarPedido(Pedido pedido, String tipoTransportadora, String tipoFrete) {
         Transportadora transportadora = TransportadoraFactory.criarTransportadora(tipoTransportadora);
-        FreteStrategy freteStrategy = tipoFrete.equalsIgnoreCase("expresso") ?
+        FreteStrategy strategy = tipoFrete.equalsIgnoreCase("expresso") ?
                 new FreteExpresso() : new FreteEconomico();
 
-        double valorFrete = freteStrategy.calcular(pedido.getValor());
+        double valorFrete = strategy.calcular(pedido.getValor());
         pedido.setFrete(valorFrete);
         pedido.setTransportadora(transportadora);
 
-        System.out.println("\nPedido processado:");
-        System.out.println(pedido);
+        System.out.println("Pedido processado: " + pedido);
         notificador.notificar(pedido);
     }
 }
